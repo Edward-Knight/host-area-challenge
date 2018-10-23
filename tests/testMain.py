@@ -10,8 +10,10 @@ class TestMain(unittest.TestCase):
     """Tests for host_area.__main__.main."""
 
     def testEmptyArgs(self):
-        """Should return exit status 1 if no arguments are supplied."""
-        self.assertEqual(main([]), 1)
+        """Should return exit status 2 if no arguments are supplied."""
+        with self.assertRaises(SystemExit) as cm:
+            main([])
+        self.assertEqual(cm.exception.code, 2)
 
 
 if __name__ == "__main__":
