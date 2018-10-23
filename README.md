@@ -22,9 +22,9 @@ Hosts = ['host2','host3']
 - [ ] Return appropriate error codes for use in scripts
 
 ## Other requirements
-- [ ] Proper project structure (setuptools)
+- [x] Proper project structure (setuptools)
 - [ ] Manage any dependencies
-- [ ] Well defined entry point and CLI
-- [ ] Should be easily deployable
-- [ ] Testing
+- [x] Well defined entry point and CLI
+- [x] Should be easily deployable
+- [x] Testing
 - [ ] Logging
