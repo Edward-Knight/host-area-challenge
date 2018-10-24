@@ -27,7 +27,7 @@ hosts = ['host2','host3']
 - [x] Well defined entry point and CLI
 - [x] Should be easily deployable
 - [x] Testing
-- [ ] Logging
+- [x] Logging
 
 ## Notes
 * In the provided example I have uncapitalised the "hosts" key as TOML is case-sensitive.
