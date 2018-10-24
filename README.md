@@ -14,12 +14,12 @@ Hosts = ['host2','host3']
 ```
 
 ## Functional requirements
-- [ ] Read toml file and convert to internal representation
+- [x] Read toml file and convert to internal representation
 - [ ] Validate internal representation and reject invalid configurations
 - [ ] Check that hosts are only assigned to a single area
 - [ ] Report to the user on pass/fail
 - [ ] Have a -q flag to suppress output
-- [ ] Return appropriate error codes for use in scripts
+- [x] Return appropriate error codes for use in scripts
 
 ## Other requirements
 - [x] Proper project structure (setuptools)

@@ -17,14 +17,30 @@ def main(argv=None):
     if argv is None:
         argv = sys.argv[1:]
 
-    parser = argparse.ArgumentParser(prog="host_area", description=__doc__)
+    parser = argparse.ArgumentParser(
+        prog="host_area", description=__doc__,
+        epilog="Exit statuses: 0 if file is valid, 1 if file is invalid, "
+               "2 if there is an error parsing arguments, "
+               "and 5 if there is an I/O error."
+    )
     parser.add_argument("--version", action="version",
                         version="%(prog)s " + host_area.__version__)
-    parser.add_argument("file", type=open,
+    parser.add_argument("file",
                         help="TOML file to validate")
     args = parser.parse_args(argv)
 
-    print("Hello World!")
+    try:
+        toml_data = toml.load(args.file)
+
+        print("Hello World!")
+    except Exception as e:
+        # print a helpful error message and exit with an appropriate exit status
+        print(parser.prog + ": " + e.__class__.__name__ + ": " + str(e),
+              file=sys.stderr)
+        if isinstance(e, IOError):
+            sys.exit(5)
+        else:
+            sys.exit(1)
 
 
 if __name__ == "__main__":
