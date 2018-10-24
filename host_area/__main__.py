@@ -7,7 +7,7 @@ import sys
 import toml
 
 import host_area
-from host_area.core import check_well_formed, check_single_assignment
+from host_area.core import check_single_assignment, check_well_formed
 
 
 def main(argv=None):
