@@ -6,6 +6,7 @@ import sys
 import toml
 
 import host_area
+from host_area.core import check_valid_structure
 
 
 def main(argv=None):
@@ -31,8 +32,8 @@ def main(argv=None):
 
     try:
         toml_data = toml.load(args.file)
-
-        print("Hello World!")
+        check_valid_structure(toml_data)
+        print(toml_data)
     except Exception as e:
         # print a helpful error message and exit with an appropriate exit status
         print(parser.prog + ": " + e.__class__.__name__ + ": " + str(e),
