@@ -3,6 +3,9 @@ from setuptools import find_packages, setup
 
 import host_area
 
+with open("requirements.txt") as f:
+    requirements = f.read().split("\n")
+
 setup(
     name="host_area",
     version=host_area.__version__,
@@ -12,6 +15,7 @@ setup(
     url="https://github.com/Edward-Knight/host-area-challenge",
 
     python_requires=">=3",
+    install_requires=requirements,
     packages=find_packages(exclude=["tests"]),
     test_suite="tests",
     entry_points={

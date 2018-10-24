@@ -23,7 +23,7 @@ Hosts = ['host2','host3']
 
 ## Other requirements
 - [x] Proper project structure (setuptools)
-- [ ] Manage any dependencies
+- [x] Manage any dependencies
 - [x] Well defined entry point and CLI
 - [x] Should be easily deployable
 - [x] Testing
