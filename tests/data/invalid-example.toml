@@ -1,4 +1,4 @@
 [area1]
 hosts = ['host1', 'host2']
 [area2]
-Hosts = ['host2','host3']
+hosts = ['host2','host3']

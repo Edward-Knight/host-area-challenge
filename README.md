@@ -10,7 +10,7 @@ For example this is invalid because host2 is in both areas.
 [area1]
 hosts = ['host1', 'host2']
 [area2]
-Hosts = ['host2','host3']
+hosts = ['host2','host3']
 ```
 
 ## Functional requirements
@@ -28,3 +28,7 @@ Hosts = ['host2','host3']
 - [x] Should be easily deployable
 - [x] Testing
 - [ ] Logging
+
+## Notes
+* In the provided example I have uncapitalised the "hosts" key as TOML is case-sensitive.
+  I am assuming that a host-area TOML file with a capitalised "hosts" key is invalid.
