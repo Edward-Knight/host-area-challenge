@@ -1,0 +1,4 @@
+[area1]
+hosts = ['host1', 'host2']
+[area2]
+Hosts = ['host4','host3']

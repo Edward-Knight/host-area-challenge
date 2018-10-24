@@ -41,6 +41,8 @@ def main(argv=None):
             sys.exit(5)
         else:
             sys.exit(1)
+    else:
+        sys.exit(0)
 
 
 if __name__ == "__main__":
