@@ -16,8 +16,8 @@ hosts = ['host2','host3']
 ## Functional requirements
 - [x] Read toml file and convert to internal representation
 - [x] Validate internal representation and reject invalid configurations
-- [ ] Check that hosts are only assigned to a single area
-- [ ] Report to the user on pass/fail
+- [x] Check that hosts are only assigned to a single area
+- [x] Report to the user on pass/fail
 - [ ] Have a -q flag to suppress output
 - [x] Return appropriate error codes for use in scripts
 

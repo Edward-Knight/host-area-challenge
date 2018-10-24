@@ -6,12 +6,11 @@ import sys
 import toml
 
 import host_area
-from host_area.core import check_well_formed
+from host_area.core import check_well_formed, check_single_assignment
 
 
 def main(argv=None):
-    """
-    Main entry point.
+    """Main entry point.
 
     :param argv: List of command line arguments. If None, will use sys.argv[1:].
     """
@@ -33,7 +32,8 @@ def main(argv=None):
     try:
         toml_data = toml.load(args.file)
         check_well_formed(toml_data)
-        print(toml_data)
+        check_single_assignment(toml_data)
+        print(args.file, "is valid")
     except Exception as e:
         # print a helpful error message and exit with an appropriate exit status
         print(parser.prog + ": " + e.__class__.__name__ + ": " + str(e),
