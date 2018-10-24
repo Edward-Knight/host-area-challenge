@@ -18,7 +18,7 @@ hosts = ['host2','host3']
 - [x] Validate internal representation and reject invalid configurations
 - [x] Check that hosts are only assigned to a single area
 - [x] Report to the user on pass/fail
-- [ ] Have a -q flag to suppress output
+- [x] Have a -q flag to suppress output
 - [x] Return appropriate error codes for use in scripts
 
 ## Other requirements

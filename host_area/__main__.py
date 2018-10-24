@@ -23,8 +23,10 @@ def main(argv=None):
                "2 if there is an error parsing arguments, "
                "and 5 if there is an I/O error."
     )
-    parser.add_argument("--version", action="version",
+    parser.add_argument("-v", "--version", action="version",
                         version="%(prog)s " + host_area.__version__)
+    parser.add_argument("-q", "--quiet", action="store_true",
+                        help="suppress stdout and stderr output")
     parser.add_argument("file",
                         help="TOML file to validate")
     args = parser.parse_args(argv)
@@ -33,11 +35,13 @@ def main(argv=None):
         toml_data = toml.load(args.file)
         check_well_formed(toml_data)
         check_single_assignment(toml_data)
-        print(args.file, "is valid")
+        if not args.quiet:
+            print(args.file, "is valid")
     except Exception as e:
         # print a helpful error message and exit with an appropriate exit status
-        print(parser.prog + ": " + e.__class__.__name__ + ": " + str(e),
-              file=sys.stderr)
+        if not args.quiet:
+            print("{}: {}: {}".format(parser.prog, e.__class__.__name__, e),
+                  file=sys.stderr)
         if isinstance(e, IOError):
             sys.exit(5)
         else:
