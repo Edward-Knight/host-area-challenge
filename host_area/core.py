@@ -3,8 +3,8 @@
 from host_area import HostAreaException
 
 
-def check_valid_structure(toml_data):
-    """Checks that toml_data is correct and parseable host-area data.
+def check_well_formed(toml_data):
+    """Checks that toml_data is well formed host-area data.
 
     :param toml_data: Python representation of host-area data, e.g. output from
                       toml.load.
